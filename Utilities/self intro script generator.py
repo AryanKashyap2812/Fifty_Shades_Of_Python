@@ -23,3 +23,5 @@ Bonus:
 - Add the current date to the end of the paragraph like: "Logged on: 2025-06-14"
 - Wrap the printed message with a decorative border of stars (*)
 """
+name = input("Please enter your name here: ").strip()
+
