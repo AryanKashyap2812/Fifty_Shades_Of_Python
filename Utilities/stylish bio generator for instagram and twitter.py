@@ -32,3 +32,40 @@ Bonus:
 - Let the user pick from 2-3 different layout styles.
 - Ask the user if they want to save the result into a `.txt` file.
 """
+import textwrap
+
+name = input("Enter your name: ").strip()
+profession = input("Enter your profession: ").strip()
+passion = input("Enter your passion in one line: ").strip()
+emoji = input("Enter an emoji which best describes you: ").strip()
+web_link = input("Enter your twitter or instagram handle: ").strip()
+
+print("\nChoose your style from 1, 2 or 3 ")
+print("1. simple style")
+print("2. vertical flair")
+print("3. emoji sandwich")
+
+style = input("Enter 1, 2 or 3: ").strip()
+
+def generate_bio(style):
+  if style=="1":
+    return f"{emoji} {name} | {profession}\n {passion}\n {web_link}"
+  elif style=="2":
+    return f"{emoji} {name} --- {profession}\n {passion}\n {web_link}"
+  elif style=="3":
+    return f"{emoji*3}\n {name} ----- {profession}\n {passion}\n {web_link}\n {emoji*3}"
+  
+bio=generate_bio(style)
+
+print("\nYour stylish bio:\n")
+print("*"*50)
+print(textwrap.dedent(bio))
+print("*"*50)
+
+save = input("Do you want to save this bio: y/n ").lower()
+
+if save == 'y':
+  filename=f"{name.lower().replace(' ','_')}_bio.txt"
+  with open(filename,"w",encoding="utf-8") as f:
+    f.write(bio)
+  print("File saved")

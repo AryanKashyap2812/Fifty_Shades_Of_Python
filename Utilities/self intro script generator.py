@@ -23,5 +23,25 @@ Bonus:
 - Add the current date to the end of the paragraph like: "Logged on: 2025-06-14"
 - Wrap the printed message with a decorative border of stars (*)
 """
-name = input("Please enter your name here: ").strip()
 
+import datetime
+
+name = input("Please enter your name here: ").strip()
+age = int(input("Please enter your age here: ").strip())
+city= input("Please enter your city here: ").strip()
+profession = input("Please enter your profession here: ").strip()
+hobby = input("Please enter your hobby here: ").strip()
+
+para= (f"Hello! My name is {name} and I am {age} years old. " 
+       f"I live in {city}. My profession is {profession} and I like to {hobby}."
+       f" Nice to meet you.")
+
+current_date=datetime.date.today().isoformat()
+
+para+=f"\nLogged on: {current_date}"
+
+border="*"*118
+
+final_message=f"{border}\n{para}\n{border}"
+
+print("\n" + final_message)
