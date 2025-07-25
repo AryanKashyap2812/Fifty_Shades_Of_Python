@@ -29,3 +29,13 @@ Bonus:
 - Add comma formatting for large numbers
 - Let the user try again without restarting the program
 """
+age_in_years = float(input("Enter your age in years: "))
+
+age_in_days = age_in_years*365.25
+age_in_hours=age_in_days*24
+age_in_minutes= age_in_hours*60
+
+print("You are approximately:")
+print(f" - {format(age_in_days,',')} days old")
+print(f" - {format(age_in_hours,',')} hours old")
+print(f" - {format(age_in_minutes,',')} minutes old")
