@@ -20,3 +20,11 @@ Bonus:
 - Handle punctuation (like commas or periods right after keywords)
 
 """
+emoji_map_fun = {
+    "love": "❤️",
+    "happy": "😊",
+    "code": "💻",
+    "tea": "🍵",
+    "music": "🎵",
+    "food": "🍕",
+}
