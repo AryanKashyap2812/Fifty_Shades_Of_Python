@@ -28,3 +28,20 @@ emoji_map_fun = {
     "music": "🎵",
     "food": "🍕",
 }
+
+user_input = input("Enter your message:")
+
+updated_words =[]
+
+for word in user_input.split():
+  cleaned_word = word.lower().strip(",.!?")
+  emoji=emoji_map_fun.get(cleaned_word,"")
+  if emoji:
+    updated_words.append(f"{word} {emoji}")
+  else:
+    updated_words.append(word)  
+    
+updated_message=" ".join(updated_words)
+
+print("Enhanced message:")
+print(updated_message)
