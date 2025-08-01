@@ -19,3 +19,21 @@ Example:
 Today I learned about how list comprehensions work in Python!
 Productivity Rating: 4/5
 """
+
+import datetime
+
+today_learning = input("Enter what you learned today: ").strip()
+rating = int(input("Rate your days productivity in (1-5): ").strip())
+
+now=datetime.datetime.now()
+date_str=now.strftime("%Y-%m-%d - %I:%M %p")
+
+journal = f"\n{date_str}\n{today_learning}"
+
+if rating:
+    rating_format = f"\nProductivity Rating: {rating}/5"
+    journal+=rating_format
+    
+    
+with open("learning_journal.txt","a") as file:
+    file.write(f"{journal}\n")
