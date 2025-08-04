@@ -77,7 +77,7 @@ def task_manager():
       
       match choice:
          case "1":
-            text=input("Enter your task").strip()
+            text=input("Enter your task: ").strip()
             if text:
                tasks.append({"text":text,"done":False})
                save_tasks(tasks)
@@ -120,4 +120,4 @@ def task_manager():
          case _:
             print("Please choose a valid option ")
             
-task_manager()                           
+task_manager()                    
