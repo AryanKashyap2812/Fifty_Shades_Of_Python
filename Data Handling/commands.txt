@@ -1,0 +1,3 @@
+for creating a virtual environment = python3 -m venv venv
+for activating a virtual environment = source venv/bin/activate
+for deactivating a virtual environment = deactivate
