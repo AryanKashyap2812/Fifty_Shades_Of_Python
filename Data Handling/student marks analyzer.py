@@ -16,3 +16,50 @@ Bonus:
 - Format output clearly in a report-style layout
 - Prevent duplicate student names
 """
+
+def collect_student_data():
+   students={}
+   
+   while True:
+      name = input("Enter name of the student or enter done to exit: ").strip()
+      
+      if name.lower()=="done":
+         break
+      if name in students:
+         print("Student already exists.")
+         continue
+      
+      try: 
+         marks = float(input(f"Enter marks of {name}: ")) 
+         students[name]=marks
+      except ValueError:
+         print("Enter valid marks")
+         
+   return students
+
+def display_report(students:dict):
+   if not students:
+      print("No student data.")
+      return
+   
+   marks = list(students.values())
+   max_score=max(marks)
+   min_score=min(marks)
+   average=sum(marks)/len(marks)
+   
+   topper=[name for name,score in students.items() if score == max_score]
+   bottomer=[name for name,score in students.items() if score == min_score]
+   
+   print("Students marks report: ")
+   print("-"*30)
+   print(f"Total students: {len(students)}")
+   print(f"Average marks of each student: {average}")
+   print(f"Highest marks: {max_score} by {', '.join(topper)}")
+   print(f"Lowest marks: {min_score} by {', '.join(bottomer)}")
+   print("-"*30)
+   print("Detailed Marks: ")
+   for name,score in students.items():
+      print(f"-{name} : {score}")
+
+students = collect_student_data()
+display_report(students)
